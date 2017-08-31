@@ -1,1 +1,1 @@
-const token = "INSERT DISCORD BOT TOKEN HERE";
+module.exports = { token: "INSERT DISCORD BOT TOKEN HERE" };

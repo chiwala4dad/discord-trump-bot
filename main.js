@@ -1,3 +1,4 @@
+const tokenFile = require("./token.js");
 
 const fs = require("fs");
 const _ = require("underscore");
@@ -45,4 +46,4 @@ client.on("message", message => {
    }
 });
 
-client.login(token);
+client.login(tokenFile.token);
