@@ -34,7 +34,7 @@ client.on("message", message => {
                    const randAudioFile = _.sample(audioFiles);
 
                    // play the random audio file
-                   const dispatcher = connection.playFile("../data/" + randAudioFile);
+                   const dispatcher = connection.playFile("./data/" + randAudioFile);
 
                    // disconnect from the voice channel when the quote is over
                    dispatcher.on("end", () => {
