@@ -7,7 +7,6 @@ A Discord bot that plays Trump quotes.
 ### Adding to a Server
 
 [Click here to add this bot to your server!](https://discordapp.com/oauth2/authorize?&client_id=316056436545421314&scope=bot&permissions=0)
-This bot is hosted on an AWS EC2 instance.
 
 ### Commands
 
