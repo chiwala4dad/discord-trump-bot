@@ -10,5 +10,5 @@ A Discord bot that plays Trump quotes.
 
 ### Commands
 
-- __!trump__ causes Trump Bot to join your voice channel and play a random Trump quote from the _data_ folder.
-- __ping__ causes Trump Bot to respond with "pong".
+- __!trump__ causes Trump Bot to join your voice channel and play a random Trump quote from the _data_ folder
+- __ping__ causes Trump Bot to respond with "pong"
