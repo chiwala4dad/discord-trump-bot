@@ -7,6 +7,9 @@ client.on('message', message => {
 	if (message.content === 'hi cheemz') {
 		message.reply('hemblo')
 	}
+	else if (message.content === '@Cheemz') {
+		message.reply('hemblo welcome to Cheemz bot. The prefix is "!c" and this is the list. https://prnt.sc/tqx4mo ')
+	}
 	else if (message.content === '!ch ay yo') {
 		if (message.channel.type !== 'text') return;
 
