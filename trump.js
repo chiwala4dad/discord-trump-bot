@@ -35,8 +35,8 @@ client.on("message", message => {
                    const dispatcher = connection.play('/data/I-like-China.wav');
 
                    // disconnect from the voice channel when the quote is over
-                   dispatcher.on("finish", () => {
-                       message.member.voiceChannel.leave();
+                   dispatcher.on('fnish', () => {
+                      message.memeber.voiceChannel.leave()
                       
                    });
                })
