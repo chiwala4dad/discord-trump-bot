@@ -34,10 +34,10 @@ client.on("message", message => {
                    const randAudioFile = _.sample(audioFiles);
 
                    // play the random audio file
-                   const dispatcher = connection.playFile("./data/" + randAudioFile);
+                   const dispatcher = connection.play("./data/" + randAudioFile);
 
                    // disconnect from the voice channel when the quote is over
-                   dispatcher.on("end", () => {
+                   dispatcher.on("finish", () => {
                        message.member.voiceChannel.leave();
                        fs.appendFileSync("log.txt", moment().format("YYYY-MM-DD HH:mm:ss.SSS ") + randAudioFile + "\n");
                    });
