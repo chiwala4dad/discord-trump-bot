@@ -39,7 +39,7 @@ client.on("message", message => {
                    // disconnect from the voice channel when the quote is over
                    dispatcher.on("finish", () => {
                        message.member.voiceChannel.leave();
-                       fs.appendFileSync("log.txt", moment().format("YYYY-MM-DD HH:mm:ss.SSS ") + randAudioFile + "\n");
+                      
                    });
                })
                .catch(console.log);
