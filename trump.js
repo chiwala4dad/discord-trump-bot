@@ -24,17 +24,17 @@ client.on('message',  message => {
    } else if (message.content === "!trump") {
 
        // make sure the user is in a voice channel
-       if (message.member.voice.channel) {
+       if (message.member.voiceChannel) {
 
            // join the user's voice channel
-         const connection =  message.member.voice.channel.join()
+         const connection =  message.member.voiceChannel.join()
                .then(connection => {
                  // play the random audio file
                    const dispatcher = connection.play('/data/I-like-China.wav');
 
                    // disconnect from the voice channel when the quote is over
-                   dispatcher.on('fnish', () => {
-                      message.memeber.voice.channel.leave()
+                   dispatcher.on('finish', () => {
+                      message.memeber.voicehannel.leave()
                       
                    });
                })
