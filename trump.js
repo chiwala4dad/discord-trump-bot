@@ -7,7 +7,7 @@ client.on('message', message => {
 	if (message.content === 'hi cheemz') {
 		message.reply('hemblo')
 	}
-	else if (message.content === '!c ay yo') {
+	else if (message.content === '!ch ay yo') {
 		if (message.channel.type !== 'text') return;
 
 		const voiceChannel = message.member.voice.channel;
@@ -23,10 +23,71 @@ client.on('message', message => {
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
 	}
+		else if (message.content === '!ch oh yo') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('oh yo.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
+	else if (message.content === '!ch nani') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('nani.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
+	else if (message.content === '!ch yes') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('yes yes.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
+		else if (message.content === '!ch pizza') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('pizza.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
+	
 });
-
-
-
-
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
