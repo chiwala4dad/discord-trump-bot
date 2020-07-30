@@ -8,7 +8,7 @@ const discord = require('discord.js');
 const client = new discord.Client();
 
 // store the filenames of all the audio files for sampling later
-const audioFiles = fs.readdirSync("./data");
+
 
 client.on("ready", () => {
    console.log("I'm ready!");
@@ -27,14 +27,12 @@ client.on("message", message => {
        if (message.member.voiceChannel) {
 
            // join the user's voice channel
-           message.member.voiceChannel.join()
+         const connection = message.member.voice.channel.join()
                .then(connection => {
 
-                   // get a random audio file from our list
-                   const randAudioFile = _.sample(audioFiles);
-
+                  
                    // play the random audio file
-                   const dispatcher = connection.play("./data/" + randAudioFile);
+                   const dispatcher = connection.play('/data/I-like-China.wav');
 
                    // disconnect from the voice channel when the quote is over
                    dispatcher.on("finish", () => {
