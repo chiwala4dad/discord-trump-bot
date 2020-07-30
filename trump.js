@@ -22,15 +22,6 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if (message.content === 'hi cheems'){
-		message.reply('hemblo')
-	}
-});
-
-
-
-
 
 
 
