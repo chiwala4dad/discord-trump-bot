@@ -27,7 +27,7 @@ client.on("message", message => {
        if (message.member.voiceChannel) {
 
            // join the user's voice channel
-         const connection = message.member.voice.channel.join()
+         const connection = message.member.voiceChannel.join()
                .then(connection => {
 
                   
