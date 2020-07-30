@@ -14,7 +14,7 @@ client.on("ready", () => {
    console.log("I'm ready!");
 });
 
-client.on('message', async message => {
+client.on('message',  message => {
 
    // if the sent message was "ping" then respond with "pong"
    if (message.content === "ping") {
@@ -27,7 +27,7 @@ client.on('message', async message => {
        if (message.member.voice.channel) {
 
            // join the user's voice channel
-         const connection = await message.member.voice.channel.join()
+         const connection =  message.member.voice.channel.join()
                .then(connection => {
                  // play the random audio file
                    const dispatcher = connection.play('/data/I-like-China.wav');
