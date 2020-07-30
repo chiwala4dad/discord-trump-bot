@@ -8,7 +8,10 @@ client.on('message', message => {
 		message.reply('hemblo')
 	}
 	else if (message.content === 'cheemz commands') {
-		message.reply('hemblo welcome to Cheemz bot. The prefix is "!c" and this is the list. https://prnt.sc/tqx4mo ')
+		message.reply('hemblo welcome to Cheemz bot. The prefix is "!c" and this is the sound list. https://prnt.sc/tqx4mo ')
+	}
+	else if (message.content === 'yes') {
+		message.reply('https://i.kym-cdn.com/photos/images/newsfeed/001/650/747/aaf.png ')
 	}
 	else if (message.content === '!ch ay yo') {
 		if (message.channel.type !== 'text') return;
