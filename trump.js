@@ -4,7 +4,10 @@ const ytdl = require('ytdl-core');
 const client = new Discord.Client();
 
 client.on('message', message => {
-	if (message.content === '!play') {
+	if (message.content === 'hi cheemz') {
+		message.reply('hemblo')
+	}
+	else if (message.content === '!play') {
 		if (message.channel.type !== 'text') return;
 
 		const voiceChannel = message.member.voice.channel;
