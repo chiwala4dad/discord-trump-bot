@@ -14,8 +14,8 @@ client.on('message', message => {
 		}
 
 		voiceChannel.join().then(connection => {
-			const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
-			const dispatcher = connection.play(stream);
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('/data/American-Dream-is-dead.wav');
 
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
