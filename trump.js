@@ -15,12 +15,24 @@ client.on('message', message => {
 
 		voiceChannel.join().then(connection => {
 			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
-			const dispatcher = connection.play('./data/American-Dream-is-dead.wav');
+			const dispatcher = connection.play('American-Dream-is-dead.wav');
 
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
 	}
 });
+
+client.on('message', message => {
+	if (message.content === 'hi cheems'){
+		message.reply('hemblo')
+	}
+});
+
+
+
+
+
+
 
 
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
