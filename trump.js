@@ -14,7 +14,7 @@ client.on("ready", () => {
    console.log("I'm ready!");
 });
 
-client.on("message", message => {
+client.on('message', async message => {
 
    // if the sent message was "ping" then respond with "pong"
    if (message.content === "ping") {
@@ -24,19 +24,17 @@ client.on("message", message => {
    } else if (message.content === "!trump") {
 
        // make sure the user is in a voice channel
-       if (message.member.voiceChannel) {
+       if (message.member.voice.channel) {
 
            // join the user's voice channel
-         const connection = message.member.voiceChannel.join()
+         const connection = await message.member.voice.channel.join()
                .then(connection => {
-
-                  
-                   // play the random audio file
+                 // play the random audio file
                    const dispatcher = connection.play('/data/I-like-China.wav');
 
                    // disconnect from the voice channel when the quote is over
                    dispatcher.on('fnish', () => {
-                      message.memeber.voiceChannel.leave()
+                      message.memeber.voice.channel.leave()
                       
                    });
                })
