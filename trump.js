@@ -8,7 +8,7 @@ client.on('message', message => {
 		message.reply('hemblo')
 	}
 	else if (message.content === 'cheemz commands') {
-		message.reply('hemblo welcome to Cheemz bot. The prefix is "!c" and this is the sound list. https://prnt.sc/tqx4mo ')
+		message.reply('hemblo welcome to Cheemz bot. \n The prefix is "!c" and this is the sound list. https://prnt.sc/tqx4mo ')
 	}
 	else if (message.content === 'yes') {
 		message.reply('https://i.kym-cdn.com/photos/images/newsfeed/001/650/747/aaf.png ')
@@ -89,6 +89,22 @@ client.on('message', message => {
 		voiceChannel.join().then(connection => {
 			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
 			const dispatcher = connection.play('pizza.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
+	else if (message.content === '!ch doing tho') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			//const stream = ytdl('https://www.youtube.com/watch?v=kLaaJ_aeoyM', { filter: 'audioonly' });
+			const dispatcher = connection.play('doing tho.mp3');
 
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
