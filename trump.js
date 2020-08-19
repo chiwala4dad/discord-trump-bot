@@ -130,13 +130,10 @@ client.on('message', message => {
 
 		const voiceChannel = message.member.voice.channel;
 
-		if (!voiceChannel) {
-			return message.reply('please join a voice channel first!');
-		}
-
+		
 		voiceChannel.join().then(connection => {
-			const stream = ytdl('https://www.youtube.com/watch?v=dmNg_pHUmdI', { filter: 'audioonly' });
-			//const dispatcher = connection.play('cut g.mp3');
+			//const stream = ytdl('https://www.youtube.com/watch?v=dmNg_pHUmdI', { filter: 'audioonly' });
+			const dispatcher = connection.play('bruh.mp3');
 
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
