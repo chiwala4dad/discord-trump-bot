@@ -125,6 +125,22 @@ client.on('message', message => {
 			dispatcher.on('finish', () => voiceChannel.leave());
 		});
 	}
+	else if (message.content === 'bruh') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			const stream = ytdl('https://www.youtube.com/watch?v=dmNg_pHUmdI', { filter: 'audioonly' });
+			//const dispatcher = connection.play('cut g.mp3');
+
+			dispatcher.on('finish', () => voiceChannel.leave());
+		});
+	}
 	else if (message.content === '!ch what') {
 		if (message.channel.type !== 'text') return;
 
